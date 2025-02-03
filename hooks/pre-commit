@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Demande à l'utilisateur s'il veut stocker l'information du commit
+read -p "Voulez-vous enregistrer les informations du commit ? (y/[n]) " yn < /dev/tty
+yn=${yn:-n}  # Par défaut, c'est 'n' si l'utilisateur appuie sur Entrée sans rien mettre.
+
+case $yn in
+  [Yy]* )
+    mkdir -p suivi  # Crée le dossier s'il n'existe pas
+    echo "commit vérifié le $(date)" > suivi/commitInfo.txt
+    git add suivi/commitInfo.txt
+    exit 0;;
+  [Nn]* )
+    exit 0;;
+esac
+
+exit 0
