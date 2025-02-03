@@ -1,0 +1,4 @@
+Constantes {
+  constante HELLO_WORLD_TITLE = "Hello world"
+  constante HELLO_WORLD_TEXT = "Hello world"
+}
